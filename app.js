@@ -20,15 +20,15 @@ async function main() {
 
   const Article = new mongoose.model ("Article", articleSchema);
 
+app.route("/articles")
 
-
-  app.get("/articles", async (req, res) => {
-      await Article.find().then(foundArticles => {
-          res.send(foundArticles);
-      }).catch(err => {
-          console.log(err);
-      })
-  });
+.get(async (req, res) => {
+  await Article.find().then(foundArticles => {
+    res.send(foundArticles);
+  }).catch(err => {
+    console.log(err);
+  })
+})
 
 
 app.listen(3000, function() {
