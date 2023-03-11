@@ -30,6 +30,17 @@ app.route("/articles")
   })
 })
 
+.post(async (req, res) => {
+    const newArticle = new Article ({
+        title: req.body.title,
+        content: req.body.content
+    })
+    newArticle.save().then(success => {
+        console.log("Succesfully added a new article");
+    }).catch(err => {
+        console.log(err);
+    })
+})
 
 app.listen(3000, function() {
   console.log("Server is running on port 3000");
