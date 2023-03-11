@@ -20,6 +20,7 @@ async function main() {
 
   const Article = new mongoose.model ("Article", articleSchema);
 
+///////////////////////////////All Articles Route/////////////////////////////////////
 app.route("/articles")
 
 .get(async (req, res) => {
